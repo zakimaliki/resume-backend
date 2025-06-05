@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import { UserController } from '../controller/user.controller';
-import { verifyToken } from '../middleware/authMiddleware';
+import { authMiddleware } from '../middleware/authMiddleware';
 
 const router = Router();
 const userController = new UserController();
 
 // Protected routes
-router.get('/profile', verifyToken, userController.getProfile.bind(userController));
-router.put('/profile', verifyToken, userController.updateProfile.bind(userController));
+router.get('/profile', authMiddleware, userController.getProfile.bind(userController));
+router.put('/profile', authMiddleware, userController.updateProfile.bind(userController));
 
 export default router; 

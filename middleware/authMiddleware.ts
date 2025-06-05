@@ -8,7 +8,7 @@ export interface AuthRequest extends Request {
   };
 }
 
-export const verifyToken = async (req: AuthRequest, res: Response, next: NextFunction) => {
+export const authMiddleware = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
     const authHeader = req.headers.authorization;
     
@@ -31,4 +31,4 @@ export const verifyToken = async (req: AuthRequest, res: Response, next: NextFun
   } catch (error) {
     return res.status(500).json({ error: 'Internal server error' });
   }
-}; 
+};
