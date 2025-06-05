@@ -2,10 +2,10 @@
   "name": "backend-repo",
   "version": "1.0.0",
   "description": "TypeScript Backend Application",
-  "main": "dist/core/app.js",
+  "main": "api/index.ts",
   "scripts": {
-    "start": "node dist/core/app.js",
-    "dev": "ts-node-dev --respawn --transpile-only core/app.ts",
+    "start": "node dist/api/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only api/index.ts",
     "build": "tsc",
     "test": "jest"
   },
